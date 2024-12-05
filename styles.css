@@ -65,6 +65,11 @@ img {
   flex: 1; /* Make the boxes grow to fill the space equally */
 }
 
+.form-inputs {
+  display: inline-block;
+  text-align: right;
+}
+
 @media (max-width: 792px) {
   .subcontain {
     max-width: 300px;
