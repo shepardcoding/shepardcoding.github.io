@@ -25,21 +25,21 @@ img {
 .container {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat (autofill, minmax(250px, 1fr)); /* Example with minmax() */
+  grid-template-columns: repeat (autofill, minmax(250px, 1fr));
   grid-template-rows: 2fr;
   justify-items: center;
 }
 
 .container,
 .banner {
-  background-color: #d4b16a;
+  background-color: #d64960;
 }
 
 .subcontain {
-  background-color: rgb(202, 202, 202);
-  border-radius: 30px;
+  background-color: rgb(231, 226, 226);
+  border-radius: 10px;
   padding: 15px;
-  width: 700px;
+  width: 800px;
   word-spacing: 4px;
 }
 
