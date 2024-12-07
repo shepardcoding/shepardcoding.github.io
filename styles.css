@@ -116,3 +116,14 @@ td {
 button:hover {
   cursor: pointer;
 }
+
+/*adding for media sizes smaller than 792px*/
+@media (max-width: 792px) {
+  .subcontain {
+    max-width: 300px;
+  }
+  .container,
+  .banner {
+    background-color: #ffffff;
+  }
+}
