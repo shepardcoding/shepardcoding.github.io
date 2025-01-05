@@ -3,14 +3,9 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", "Courier New", Courier, monospace; /* Set the default font for the page */
 }
-
-/* Styles for all images */
-img {
-  height: 300px;
-  width: 300px;
-  border-radius: 50px; /* Rounded corners for images */
+body {
+  font-family: "Montserrat", "Courier New", Courier, monospace; /* Set the default font for the page */
 }
 
 /* Styles for the banner section */
@@ -22,8 +17,9 @@ img {
 
 /* Styles for the logo image */
 .logo {
-  height: 500px;
-  width: 500px;
+  max-height: 700px;
+  max-width: 700px;
+  border-radius: 50px; /* Rounded corners for images */
 }
 
 /* Styles for the main content container */
@@ -34,14 +30,14 @@ img {
     autofill,
     minmax(250px, 1fr)
   ); /* Responsive columns */
-  grid-template-rows: 2fr; /* Set row height */
+  /* Removed grid-template-rows as it was unnecessary with one row */
   justify-items: center; /* Horizontally center grid items */
 }
 
 /* Background color for container and banner */
 .container,
 .banner {
-  background-color: #d64960;
+  background-color: #f7bf50;
 }
 
 /* Styles for the sub-containers within the grid */
@@ -53,52 +49,61 @@ img {
   word-spacing: 4px; /* Add spacing between words */
 }
 
-/* Center content in specific sub-containers */
-.chris,
-.contact {
-  justify-items: center;
+/* Styles for the project container */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr; /* Will need to change to repeat(2, 1fr) when you add more items */
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
 }
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-item img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 70px;
+  padding: 5px;
+}
+
+.project-item p {
+  margin-top: 10px;
+}
+/*end Projects*/
 
 /* Add border to image in the "chris" sub-container */
 .chris img {
   border: 2px solid black;
-}
-
-/* Styles for the project boxes */
-.project-box {
-  display: flex; /* Use flexbox for layout */
-  gap: 10px; /* Spacing between project boxes */
-}
-
-/* Styles for individual project boxes */
-.number-box {
-  background-color: rgb(18, 96, 241);
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  flex: 1; /* Make boxes fill the available space equally */
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 50px; /* Rounded corners for images */
 }
 
 /* Styles for the form inputs container */
 .form-inputs {
-  display: block; /* Make the container take full width */
+  /* Removed display: block; as it's usually the default */
   text-align: left; /* Align text to the left */
-}
-
-/* Make table cell text bold */
-td {
-  font-weight: bold;
 }
 
 /* Styles for the table within the form */
 .form-inputs table {
   border-collapse: collapse; /* Remove spacing between table cells */
   width: 100%; /* Make table take full width of container */
+  /* OR consider: table-layout: fixed; for equal width columns */
 }
 
 /* Add padding to table cells */
 .form-inputs td {
   padding: 10px;
+  font-weight: bold; /* Combined with the general td style */
 }
 
 /* Styles for the button within the form */
@@ -114,7 +119,7 @@ td {
 
 /* Change cursor to pointer on hover for buttons */
 button:hover {
-  cursor: pointer;
+  cursor: pointer; /* May be unnecessary in modern browsers */
 }
 
 /*adding for media sizes smaller than 792px*/
@@ -122,6 +127,7 @@ button:hover {
   .subcontain {
     max-width: 300px;
   }
+
   .container,
   .banner {
     background-color: #ffffff;
