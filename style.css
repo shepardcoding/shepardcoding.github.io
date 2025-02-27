@@ -1,0 +1,164 @@
+/* General styles for the entire page */
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+}
+
+/* Styles for the banner section */
+.banner {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* Styles for the logo image */
+.logo {
+  max-height: 700px;
+  max-width: 700px;
+  border-radius: 50px;
+}
+
+/* Styles for the main content container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Background color for container and banner */
+.container,
+.banner {
+  background-color: #f7bf50;
+}
+
+/* Styles for the sub-containers within the grid */
+.subcontain {
+  background-color: rgb(231, 226, 226);
+  border-radius: 10px;
+  padding: 15px;
+  width: 800px;
+  word-spacing: 4px;
+  text-align: center;
+}
+
+/* Styles for the project container */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-item img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 70px;
+  padding: 5px;
+}
+
+.project-item p {
+  margin-top: 10px;
+}
+
+/* Add border to image in the "chris" sub-container */
+.chris {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chris img {
+  border: 2px solid black;
+  max-height: 300px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styles for the form inputs container */
+.form-inputs {
+  text-align: center;
+}
+
+/* Styles for the table within the form */
+.form-inputs table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Add padding to table cells */
+.form-inputs td {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.form-inputs input {
+  width: 100%;
+  padding: 8px;
+}
+
+/* Styles for the button within the form */
+.form-inputs button {
+  padding: 1em;
+  border-radius: 50px;
+  color: #ffffff;
+  background-color: black;
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Media query for screens smaller than 792px */
+@media (max-width: 792px) {
+  .subcontain {
+    max-width: 300px;
+    width: 90%;
+  }
+
+  .logo {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .container,
+  .banner {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 793px) {
+  .project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
