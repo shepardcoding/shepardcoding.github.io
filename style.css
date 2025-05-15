@@ -14,6 +14,13 @@ section, footer {
     padding: .2rem 1.5rem;
 }
 
+section {
+  min-height: 100vh;           /* each section fills the viewport height */
+  scroll-margin-top: 100px;     /* offsets for sticky nav */
+  padding: 2rem 1.5rem;        /* gives content some breathing room */
+}
+
+
 
 body {
   background-color: #ffffff; /* white background */
@@ -27,13 +34,13 @@ body {
 nav {
   position: sticky;
   top: 0;
-  z-index: 1000; /* keeps above other content */
+  z-index: 1000;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .2rem 1.5rem;
-  border-bottom: 1px solid #d4d4d4; /* subtle line for separation */
+  padding: 0.2rem 1.5rem;
+  border-bottom: 1px solid #d4d4d4;
 }
 
 nav a {
@@ -44,6 +51,10 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;  /* optional: subtle feedback */
+}
+
+.site-title h4 {
+  margin: 0;
 }
 
 .banner-nav {
@@ -85,6 +96,14 @@ nav a:hover {
 
 
 /*contact section*/
+#contact {
+  min-height: 400px;
+  scroll-margin-top: 80px;
+}
+
+footer {
+  padding-bottom: 200px;
+}
 
 
 /*footer*/
@@ -92,4 +111,12 @@ nav a:hover {
 
 
 /* Media query for screens smaller than 792px (Mobile-friendly styles) */
-/*@media (max-width: 792px)*/ 
+@media (max-width: 792px) {
+  nav {
+    justify-content: center;   /* center the title */
+  }
+
+  .banner-nav {
+    display: none;             /* hide nav links */
+  }
+}
