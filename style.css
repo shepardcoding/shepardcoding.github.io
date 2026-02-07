@@ -3,97 +3,87 @@ html, body {
   margin: 0; padding: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
-  color: #000000;
+  color: #1a1a1a;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-/* Nav - Large Logo Fix */
+/* Nav - Large Logo */
 nav {
   position: sticky; top: 0; z-index: 1000;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   display: flex; justify-content: space-between; align-items: center;
   padding: 0.8rem 2rem;
   border-bottom: 1px solid #eaeaea;
 }
 
-.nav-logo {
-  height: 60px; /* Bigger as requested */
-  width: auto;
-}
-
+.nav-logo { height: 65px; width: auto; }
 .site-title { display: flex; align-items: center; }
-.site-title h1 { font-size: 1.4rem; margin-left: 15px; }
-.banner-nav { display: flex; gap: 2rem; }
-.banner-nav a { text-decoration: none; color: inherit; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
+.site-title h1 { font-size: 1.4rem; margin-left: 15px; font-weight: 800; }
+.banner-nav { display: flex; gap: 2.5rem; }
+.banner-nav a { text-decoration: none; color: inherit; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
 /* Sections */
-section { padding: 5rem 1.5rem; }
-h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; }
+section { padding: 8rem 2rem; }
+h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 800; }
 
-/* About - Centered Stack (Kills empty space) */
+/* About - Balanced Side-by-Side */
 .about-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-text-box {
-  margin-bottom: 3rem;
-  line-height: 1.8;
-}
-
-.about-text-box p { font-size: 1.2rem; }
-.sub-text { font-size: 1rem; opacity: 0.7; margin-top: 1rem; }
-
-.about-visuals {
   display: flex;
-  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 4rem;
+  align-items: center; /* This kills the "empty space" at the bottom */
+}
+
+.about-text-column { flex: 1.2; }
+.about-text-column p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 1.5rem; }
+.certs { color: #005288; font-weight: 700; border-left: 4px solid #005288; padding-left: 15px; }
+.sub-text { font-size: 1rem; opacity: 0.7; }
+
+.about-visuals-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .profile-pic {
-  height: 250px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.about-logo {
-  height: 120px;
+.about-logo-large {
+  width: 100%;
+  max-width: 220px; /* Bigger as requested */
+  height: auto;
 }
 
-/* Connect - Smaller & Centered */
-.connect-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
+/* Connect - Card Layout */
+.connect-wrapper { display: flex; justify-content: center; }
 .connect-card {
   background: #f9f9f9;
-  padding: 2.5rem;
-  border-radius: 12px;
+  padding: 4rem;
+  border-radius: 20px;
+  max-width: 550px;
+  text-align: center;
   border: 1px solid #eee;
-  max-width: 500px; /* Narrower box */
-  text-align: center; /* Center text inside */
 }
 
 .contact-links a {
   display: block;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   color: #005288;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.4rem;
 }
 
-footer {
-  text-align: center;
-  padding: 3rem;
-  font-size: 0.8rem;
-  border-top: 1px solid #eee;
-}
+footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #fafafa; border-top: 1px solid #eee; }
 
 /* Desktop Dark Mode */
 @media (min-width: 1024px) {
@@ -101,12 +91,15 @@ footer {
   nav { background-color: #0B0D10; border-color: #273140; color: #fff; }
   .connect-card { background: #151A21; border-color: #273140; }
   .contact-links a { color: #40E0FF; }
-  .about-logo { filter: invert(1); } /* Flip black logo to white on dark bg */
+  .certs { color: #40E0FF; border-color: #40E0FF; }
+  .about-logo-large { filter: invert(1); }
+  footer { background: #08090b; border-color: #273140; }
 }
 
-/* Mobile Nav Adjust */
-@media (max-width: 768px) {
-  nav { flex-direction: column; padding: 1rem; }
-  .banner-nav { margin-top: 1rem; }
-  .nav-logo { height: 50px; }
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .about-container { flex-direction: column; text-align: center; }
+  .about-visuals-column { order: 2; margin-top: 3rem; }
+  nav { flex-direction: column; padding: 1.5rem; }
+  .banner-nav { margin-top: 1.5rem; }
 }
