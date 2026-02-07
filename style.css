@@ -8,21 +8,56 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Nav - Large Logo */
+/* Nav - Text Only with Hover Effects */
 nav {
   position: sticky; top: 0; z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   display: flex; justify-content: space-between; align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 1.5rem 3rem; /* Increased padding for clean text look */
   border-bottom: 1px solid #eaeaea;
 }
 
-.nav-logo { height: 65px; width: auto; }
-.site-title { display: flex; align-items: center; }
-.site-title h1 { font-size: 1.4rem; margin-left: 15px; font-weight: 800; }
-.banner-nav { display: flex; gap: 2.5rem; }
-.banner-nav a { text-decoration: none; color: inherit; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+.site-title h1 { 
+  font-size: 1.6rem; 
+  margin: 0; 
+  font-weight: 800; 
+  letter-spacing: -1px;
+}
+
+.banner-nav { display: flex; gap: 3rem; }
+
+/* Modern Hover Effect */
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #005288; /* Corporate Blue */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #005288;
+}
 
 /* Sections */
 section { padding: 8rem 2rem; }
@@ -33,21 +68,30 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 80
   display: flex;
   max-width: 1100px;
   margin: 0 auto;
-  gap: 4rem;
-  align-items: center; /* This kills the "empty space" at the bottom */
+  gap: 5rem;
+  align-items: center;
 }
 
 .about-text-column { flex: 1.2; }
-.about-text-column p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 1.5rem; }
-.certs { color: #005288; font-weight: 700; border-left: 4px solid #005288; padding-left: 15px; }
-.sub-text { font-size: 1rem; opacity: 0.7; }
+.about-text-column p { font-size: 1.25rem; line-height: 1.8; margin-bottom: 1.5rem; }
+
+.certs-badge { 
+  background: #f0f4f8; 
+  padding: 1.2rem; 
+  border-left: 5px solid #005288; 
+  margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sub-text { font-size: 1.05rem !important; opacity: 0.7; }
 
 .about-visuals-column {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .profile-pic {
@@ -59,15 +103,15 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 80
 
 .about-logo-large {
   width: 100%;
-  max-width: 220px; /* Bigger as requested */
+  max-width: 240px;
   height: auto;
 }
 
-/* Connect - Card Layout */
+/* Connect Card */
 .connect-wrapper { display: flex; justify-content: center; }
 .connect-card {
   background: #f9f9f9;
-  padding: 4rem;
+  padding: 4rem 2rem;
   border-radius: 20px;
   max-width: 550px;
   text-align: center;
@@ -81,6 +125,11 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 80
   text-decoration: none;
   font-weight: 800;
   font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+
+.contact-links a:hover {
+  transform: scale(1.05);
 }
 
 footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #fafafa; border-top: 1px solid #eee; }
@@ -89,9 +138,11 @@ footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #faf
 @media (min-width: 1024px) {
   body { background-color: #0B0D10; color: #E9EEF5; }
   nav { background-color: #0B0D10; border-color: #273140; color: #fff; }
+  .nav-link::after { background-color: #40E0FF; }
+  .nav-link:hover { color: #40E0FF; }
   .connect-card { background: #151A21; border-color: #273140; }
+  .certs-badge { background: #1a222d; border-color: #40E0FF; }
   .contact-links a { color: #40E0FF; }
-  .certs { color: #40E0FF; border-color: #40E0FF; }
   .about-logo-large { filter: invert(1); }
   footer { background: #08090b; border-color: #273140; }
 }
@@ -100,6 +151,6 @@ footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #faf
 @media (max-width: 900px) {
   .about-container { flex-direction: column; text-align: center; }
   .about-visuals-column { order: 2; margin-top: 3rem; }
-  nav { flex-direction: column; padding: 1.5rem; }
-  .banner-nav { margin-top: 1.5rem; }
+  nav { flex-direction: column; padding: 2rem 1rem; }
+  .banner-nav { margin-top: 2rem; }
 }
