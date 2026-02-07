@@ -8,13 +8,13 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Nav - Text Only with Hover Effects */
+/* Nav - Desktop Sticky */
 nav {
   position: sticky; top: 0; z-index: 1000;
   background-color: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   display: flex; justify-content: space-between; align-items: center;
-  padding: 1.5rem 3rem; /* Increased padding for clean text look */
+  padding: 1.5rem 3rem;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -27,7 +27,6 @@ nav {
 
 .banner-nav { display: flex; gap: 3rem; }
 
-/* Modern Hover Effect */
 .nav-link {
   text-decoration: none;
   color: inherit;
@@ -41,96 +40,34 @@ nav {
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #005288; /* Corporate Blue */
+  content: ''; position: absolute; width: 0; height: 2px;
+  bottom: 0; left: 0; background-color: #005288;
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link:hover {
-  color: #005288;
-}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: #005288; }
 
 /* Sections */
 section { padding: 8rem 2rem; }
 h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 800; }
 
-/* About - Balanced Side-by-Side */
-.about-container {
-  display: flex;
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 5rem;
-  align-items: center;
-}
-
+/* About */
+.about-container { display: flex; max-width: 1100px; margin: 0 auto; gap: 5rem; align-items: center; }
 .about-text-column { flex: 1.2; }
 .about-text-column p { font-size: 1.25rem; line-height: 1.8; margin-bottom: 1.5rem; }
-
-.certs-badge { 
-  background: #f0f4f8; 
-  padding: 1.2rem; 
-  border-left: 5px solid #005288; 
-  margin: 2rem 0;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
+.certs-badge { background: #f0f4f8; padding: 1.2rem; border-left: 5px solid #005288; margin: 2rem 0; font-size: 1rem; font-weight: 700; }
 .sub-text { font-size: 1.05rem !important; opacity: 0.7; }
 
-.about-visuals-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-}
+.about-visuals-column { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+.profile-pic { width: 100%; max-width: 320px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+.about-logo-large { width: 100%; max-width: 240px; height: auto; }
 
-.profile-pic {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-.about-logo-large {
-  width: 100%;
-  max-width: 240px;
-  height: auto;
-}
-
-/* Connect Card */
+/* Connect */
 .connect-wrapper { display: flex; justify-content: center; }
-.connect-card {
-  background: #f9f9f9;
-  padding: 4rem 2rem;
-  border-radius: 20px;
-  max-width: 550px;
-  text-align: center;
-  border: 1px solid #eee;
-}
-
-.contact-links a {
-  display: block;
-  margin-top: 1.5rem;
-  color: #005288;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 1.4rem;
-  transition: transform 0.2s ease;
-}
-
-.contact-links a:hover {
-  transform: scale(1.05);
-}
+.connect-card { background: #f9f9f9; padding: 4rem 2rem; border-radius: 20px; max-width: 550px; text-align: center; border: 1px solid #eee; }
+.contact-links a { display: block; margin-top: 1.5rem; color: #005288; text-decoration: none; font-weight: 800; font-size: 1.4rem; transition: transform 0.2s ease; }
+.contact-links a:hover { transform: scale(1.05); }
 
 footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #fafafa; border-top: 1px solid #eee; }
 
@@ -147,10 +84,26 @@ footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #faf
   footer { background: #08090b; border-color: #273140; }
 }
 
-/* Mobile Responsiveness */
+/* MOBILE REFINEMENT: Lose the Bar */
 @media (max-width: 900px) {
-  .about-container { flex-direction: column; text-align: center; }
+  nav {
+    position: relative; /* Not sticky on mobile */
+    flex-direction: column;
+    padding: 3rem 1rem 1rem 1rem;
+    border-bottom: none;
+    background-color: transparent;
+  }
+
+  .banner-nav {
+    display: none; /* Hides the links on mobile */
+  }
+
+  .site-title h1 {
+    font-size: 1.8rem; /* Make the brand name big on mobile */
+    text-align: center;
+  }
+
+  .about-container { flex-direction: column; text-align: center; padding-top: 0; }
   .about-visuals-column { order: 2; margin-top: 3rem; }
-  nav { flex-direction: column; padding: 2rem 1rem; }
-  .banner-nav { margin-top: 2rem; }
+  section { padding: 4rem 1.5rem; }
 }
