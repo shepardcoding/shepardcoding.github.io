@@ -1,97 +1,52 @@
-/* Global Layout */
+/* Global */
 html, body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
   color: #000000;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Fixes mobile horizontal drift */
+  overflow-x: hidden;
 }
 
-h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
-  letter-spacing: -1px;
-}
-
-/* Navigation */
+/* Nav - Large Logo Fix */
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.98);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 2rem;
+  position: sticky; top: 0; z-index: 1000;
+  background-color: #ffffff;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.8rem 2rem;
   border-bottom: 1px solid #eaeaea;
 }
 
-.site-title {
-  display: flex;
-  align-items: center;
-}
-
-.site-title h1 {
-  font-size: 1.2rem;
-  margin-left: 12px;
-}
-
-.site-title img {
-  height: 40px;
+.nav-logo {
+  height: 60px; /* Bigger as requested */
   width: auto;
 }
 
-.banner-nav {
-  display: flex;
-  gap: 2.5rem;
-}
+.site-title { display: flex; align-items: center; }
+.site-title h1 { font-size: 1.4rem; margin-left: 15px; }
+.banner-nav { display: flex; gap: 2rem; }
+.banner-nav a { text-decoration: none; color: inherit; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
 
-.banner-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+/* Sections */
+section { padding: 5rem 1.5rem; }
+h3 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; }
 
-/* Sections General */
-section {
-  min-height: 70vh;
-  padding: 6rem 1.5rem;
-  box-sizing: border-box;
-}
-
-/* About Section - Vertical & Centered Flow */
+/* About - Centered Stack (Kills empty space) */
 .about-container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.about-text {
-  margin-bottom: 4rem;
-}
-
-.about-text p {
-  font-size: 1.25rem;
+.about-text-box {
+  margin-bottom: 3rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
 }
 
-.sub-text {
-  font-size: 1rem !important;
-  opacity: 0.7;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.about-text-box p { font-size: 1.2rem; }
+.sub-text { font-size: 1rem; opacity: 0.7; margin-top: 1rem; }
 
-.about-images {
+.about-visuals {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,106 +55,58 @@ section {
 }
 
 .profile-pic {
-  height: 280px;
-  width: auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.logo-secondary {
-  height: 150px;
-  width: auto;
-  object-fit: contain;
+.about-logo {
+  height: 120px;
 }
 
-/* Contact Card */
-.contact-card {
-  background: #fdfdfd;
-  padding: 4rem 2rem;
-  border-radius: 20px;
-  border: 1px solid #f0f0f0;
-  max-width: 800px;
-  margin: 0 auto;
+/* Connect - Smaller & Centered */
+.connect-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
-.contact-info p {
-  font-size: 1.3rem;
-  margin: 1.5rem 0;
+.connect-card {
+  background: #f9f9f9;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  max-width: 500px; /* Narrower box */
+  text-align: center; /* Center text inside */
 }
 
-.contact-info a {
+.contact-links a {
+  display: block;
+  margin-top: 1rem;
   color: #005288;
   text-decoration: none;
   font-weight: 700;
+  font-size: 1.1rem;
 }
 
-/* Footer */
 footer {
-  padding: 4rem 1.5rem;
-  background-color: #fafafa;
-  border-top: 1px solid #eaeaea;
   text-align: center;
-  font-size: 0.9rem;
-  color: #666;
+  padding: 3rem;
+  font-size: 0.8rem;
+  border-top: 1px solid #eee;
 }
 
-/* DESKTOP DARK MODE (Automatic on large screens) */
+/* Desktop Dark Mode */
 @media (min-width: 1024px) {
-  body {
-    background-color: #0B0D10;
-    color: #E9EEF5;
-  }
-  
-  nav {
-    background-color: #0B0D10;
-    border-bottom: 1px solid #273140;
-    color: #ffffff;
-  }
-
-  .contact-card {
-    background: #151A21;
-    border-color: #273140;
-  }
-
-  .contact-info a {
-    color: #40E0FF;
-  }
-
-  .logo-secondary {
-    filter: invert(1); /* Turns black logo white for dark mode */
-  }
-  
-  footer {
-    background-color: #08090b;
-    border-color: #273140;
-  }
+  body { background-color: #0B0D10; color: #E9EEF5; }
+  nav { background-color: #0B0D10; border-color: #273140; color: #fff; }
+  .connect-card { background: #151A21; border-color: #273140; }
+  .contact-links a { color: #40E0FF; }
+  .about-logo { filter: invert(1); } /* Flip black logo to white on dark bg */
 }
 
-/* MOBILE FIXES */
-@media (max-width: 792px) {
-  section {
-    padding: 4rem 1rem;
-  }
-  
-  nav {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-  
-  .banner-nav {
-    margin-top: 1.5rem;
-  }
-
-  .about-images {
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .profile-pic {
-    height: 220px;
-  }
-
-  .logo-secondary {
-    height: 100px;
-  }
+/* Mobile Nav Adjust */
+@media (max-width: 768px) {
+  nav { flex-direction: column; padding: 1rem; }
+  .banner-nav { margin-top: 1rem; }
+  .nav-logo { height: 50px; }
 }
