@@ -90,7 +90,8 @@ h3 { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; font-weight: 80
 
 .contact-links a { display: block; margin-top: 1.5rem; color: #005288; text-decoration: none; font-weight: 800; font-size: 1.4rem; }
 
-footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #fafafa; border-top: 1px solid #eee; }
+/* Footer - Default Light */
+footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #fafafa; border-top: 1px solid #eee; color: #666; }
 
 /* Desktop Dark Mode */
 @media (min-width: 1024px) {
@@ -104,6 +105,13 @@ footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #faf
   .contact-links a { color: #40E0FF; }
   .download-btn { background-color: #40E0FF; color: #0B0D10; }
   .about-logo-large { filter: invert(1); }
+  
+  /* Footer Dark Mode Fix */
+  footer { 
+    background-color: #08090b; 
+    border-color: #273140; 
+    color: #888; 
+  }
 }
 
 /* Mobile */
@@ -113,4 +121,5 @@ footer { text-align: center; padding: 4rem; font-size: 0.85rem; background: #faf
   .about-container { flex-direction: column; text-align: center; }
   .about-visuals-column { order: 2; margin-top: 3rem; }
   .download-btn { width: 100%; box-sizing: border-box; }
+  footer { background: transparent; border: none; }
 }
